@@ -5,6 +5,8 @@
  */
 package vista;
 
+import controlador.Controlador_FRM_MenuPrincipal;
+
 /**
  *
  * @author Roberto
@@ -14,8 +16,30 @@ public class FRM_MenuPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form FRM_MenuPrincipal
      */
+    Controlador_FRM_MenuPrincipal controlador;
+    
     public FRM_MenuPrincipal() {
         initComponents();
+        setLocationRelativeTo(null);
+        controlador=new Controlador_FRM_MenuPrincipal(this);
+        jmi_Salir.addActionListener(controlador);
+        jmi_Login.addActionListener(controlador);
+        jmi_MantenimientoProductos.addActionListener(controlador);
+        jmi_MantenimientoClientes.addActionListener(controlador);
+        jmi_MantenimientoProveedores.addActionListener(controlador);
+        jmi_MantenimientoUsuarios.addActionListener(controlador);
+        jmi_Facturacion.addActionListener(controlador);
+        jmi_AbrirCaja.addActionListener(controlador);
+        jmi_CerrarCaja.addActionListener(controlador);
+        jmi_ReporteProductos.addActionListener(controlador);
+        jmi_ReporteProveedores.addActionListener(controlador);
+        jmi_ReporteClientes.addActionListener(controlador);
+        jmi_ReporteVentasPorFecha.addActionListener(controlador);
+        jmi_Conexion.addActionListener(controlador);
+        jmi_Respaldar.addActionListener(controlador);
+        jmi_Restaurar.addActionListener(controlador);
+        jmi_AcercaDe.addActionListener(controlador);
+        jmi_ReporteDeErrores.addActionListener(controlador);
     }
 
     /**
@@ -27,17 +51,176 @@ public class FRM_MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jmb_BarraMenu = new javax.swing.JMenuBar();
+        jm_Archivo = new javax.swing.JMenu();
+        jmi_Salir = new javax.swing.JMenuItem();
+        jmi_Login = new javax.swing.JMenuItem();
+        jm_Mantenimiento = new javax.swing.JMenu();
+        jmi_MantenimientoProductos = new javax.swing.JMenuItem();
+        jmi_MantenimientoClientes = new javax.swing.JMenuItem();
+        jmi_MantenimientoProveedores = new javax.swing.JMenuItem();
+        jmi_MantenimientoUsuarios = new javax.swing.JMenuItem();
+        jm_Procesos = new javax.swing.JMenu();
+        jmi_Facturacion = new javax.swing.JMenuItem();
+        jmi_AbrirCaja = new javax.swing.JMenuItem();
+        jmi_CerrarCaja = new javax.swing.JMenuItem();
+        jm_Reportes = new javax.swing.JMenu();
+        jmi_ReporteProductos = new javax.swing.JMenuItem();
+        jmi_ReporteClientes = new javax.swing.JMenuItem();
+        jmi_ReporteProveedores = new javax.swing.JMenuItem();
+        jmi_ReporteVentasPorFecha = new javax.swing.JMenuItem();
+        jm_BaseDeDatos = new javax.swing.JMenu();
+        jmi_Conexion = new javax.swing.JMenuItem();
+        jmi_Respaldar = new javax.swing.JMenuItem();
+        jmi_Restaurar = new javax.swing.JMenuItem();
+        jm_Ayuda = new javax.swing.JMenu();
+        jmi_AcercaDe = new javax.swing.JMenuItem();
+        jmi_ReporteDeErrores = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 700));
+
+        jm_Archivo.setText("Archivo");
+        jm_Archivo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        jmi_Salir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
+        jmi_Salir.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jmi_Salir.setText("Salir");
+        jm_Archivo.add(jmi_Salir);
+
+        jmi_Login.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
+        jmi_Login.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jmi_Login.setText("Login / Cambiar Usuario");
+        jmi_Login.setActionCommand("Login/CambiarUsuario");
+        jm_Archivo.add(jmi_Login);
+
+        jmb_BarraMenu.add(jm_Archivo);
+
+        jm_Mantenimiento.setText("Mantenimiento");
+        jm_Mantenimiento.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        jmi_MantenimientoProductos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK));
+        jmi_MantenimientoProductos.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jmi_MantenimientoProductos.setText("Productos");
+        jmi_MantenimientoProductos.setActionCommand("MantenimientoProductos");
+        jm_Mantenimiento.add(jmi_MantenimientoProductos);
+
+        jmi_MantenimientoClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
+        jmi_MantenimientoClientes.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jmi_MantenimientoClientes.setText("Clientes");
+        jmi_MantenimientoClientes.setActionCommand("MantenimientoClientes");
+        jm_Mantenimiento.add(jmi_MantenimientoClientes);
+
+        jmi_MantenimientoProveedores.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_MASK));
+        jmi_MantenimientoProveedores.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jmi_MantenimientoProveedores.setText("Proveedores");
+        jmi_MantenimientoProveedores.setActionCommand("MantenimientoProveedores");
+        jm_Mantenimiento.add(jmi_MantenimientoProveedores);
+
+        jmi_MantenimientoUsuarios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
+        jmi_MantenimientoUsuarios.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jmi_MantenimientoUsuarios.setText("Usuarios");
+        jmi_MantenimientoUsuarios.setActionCommand("MantenimientoUsuarios");
+        jm_Mantenimiento.add(jmi_MantenimientoUsuarios);
+
+        jmb_BarraMenu.add(jm_Mantenimiento);
+
+        jm_Procesos.setText("Procesos");
+        jm_Procesos.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        jmi_Facturacion.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_MASK));
+        jmi_Facturacion.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jmi_Facturacion.setText("Facturación");
+        jm_Procesos.add(jmi_Facturacion);
+
+        jmi_AbrirCaja.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
+        jmi_AbrirCaja.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jmi_AbrirCaja.setText("Abrir Caja ");
+        jmi_AbrirCaja.setActionCommand("Abrir Caja");
+        jm_Procesos.add(jmi_AbrirCaja);
+
+        jmi_CerrarCaja.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK));
+        jmi_CerrarCaja.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jmi_CerrarCaja.setText("Cerrar Caja");
+        jm_Procesos.add(jmi_CerrarCaja);
+
+        jmb_BarraMenu.add(jm_Procesos);
+
+        jm_Reportes.setText("Reportes");
+        jm_Reportes.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        jmi_ReporteProductos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jmi_ReporteProductos.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jmi_ReporteProductos.setText("Productos");
+        jmi_ReporteProductos.setActionCommand("ReporteProductos");
+        jm_Reportes.add(jmi_ReporteProductos);
+
+        jmi_ReporteClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jmi_ReporteClientes.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jmi_ReporteClientes.setText("Clientes");
+        jmi_ReporteClientes.setActionCommand("ReporteClientes");
+        jm_Reportes.add(jmi_ReporteClientes);
+
+        jmi_ReporteProveedores.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jmi_ReporteProveedores.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jmi_ReporteProveedores.setText("ReporteProveedores");
+        jm_Reportes.add(jmi_ReporteProveedores);
+
+        jmi_ReporteVentasPorFecha.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jmi_ReporteVentasPorFecha.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jmi_ReporteVentasPorFecha.setText("Ventas Por Fecha");
+        jmi_ReporteVentasPorFecha.setActionCommand("ReporteVentasPorFecha");
+        jm_Reportes.add(jmi_ReporteVentasPorFecha);
+
+        jmb_BarraMenu.add(jm_Reportes);
+
+        jm_BaseDeDatos.setText("Base de Datos");
+        jm_BaseDeDatos.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        jmi_Conexion.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jmi_Conexion.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jmi_Conexion.setText("Conexión");
+        jmi_Conexion.setActionCommand("Conexion");
+        jm_BaseDeDatos.add(jmi_Conexion);
+
+        jmi_Respaldar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jmi_Respaldar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jmi_Respaldar.setText("Respaldar");
+        jm_BaseDeDatos.add(jmi_Respaldar);
+
+        jmi_Restaurar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jmi_Restaurar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jmi_Restaurar.setText("Restaurar");
+        jm_BaseDeDatos.add(jmi_Restaurar);
+
+        jmb_BarraMenu.add(jm_BaseDeDatos);
+
+        jm_Ayuda.setText("Ayuda");
+        jm_Ayuda.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        jmi_AcercaDe.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jmi_AcercaDe.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jmi_AcercaDe.setText("Acerca de");
+        jm_Ayuda.add(jmi_AcercaDe);
+
+        jmi_ReporteDeErrores.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        jmi_ReporteDeErrores.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jmi_ReporteDeErrores.setText("Reporte de Errores");
+        jm_Ayuda.add(jmi_ReporteDeErrores);
+
+        jmb_BarraMenu.add(jm_Ayuda);
+
+        setJMenuBar(jmb_BarraMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 705, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 385, Short.MAX_VALUE)
         );
 
         pack();
@@ -79,5 +262,30 @@ public class FRM_MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jm_Archivo;
+    private javax.swing.JMenu jm_Ayuda;
+    private javax.swing.JMenu jm_BaseDeDatos;
+    private javax.swing.JMenu jm_Mantenimiento;
+    private javax.swing.JMenu jm_Procesos;
+    private javax.swing.JMenu jm_Reportes;
+    private javax.swing.JMenuBar jmb_BarraMenu;
+    private javax.swing.JMenuItem jmi_AbrirCaja;
+    private javax.swing.JMenuItem jmi_AcercaDe;
+    private javax.swing.JMenuItem jmi_CerrarCaja;
+    private javax.swing.JMenuItem jmi_Conexion;
+    private javax.swing.JMenuItem jmi_Facturacion;
+    private javax.swing.JMenuItem jmi_Login;
+    private javax.swing.JMenuItem jmi_MantenimientoClientes;
+    private javax.swing.JMenuItem jmi_MantenimientoProductos;
+    private javax.swing.JMenuItem jmi_MantenimientoProveedores;
+    private javax.swing.JMenuItem jmi_MantenimientoUsuarios;
+    private javax.swing.JMenuItem jmi_ReporteClientes;
+    private javax.swing.JMenuItem jmi_ReporteDeErrores;
+    private javax.swing.JMenuItem jmi_ReporteProductos;
+    private javax.swing.JMenuItem jmi_ReporteProveedores;
+    private javax.swing.JMenuItem jmi_ReporteVentasPorFecha;
+    private javax.swing.JMenuItem jmi_Respaldar;
+    private javax.swing.JMenuItem jmi_Restaurar;
+    private javax.swing.JMenuItem jmi_Salir;
     // End of variables declaration//GEN-END:variables
 }
