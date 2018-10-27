@@ -13,7 +13,7 @@ public class Cliente {
     
     String cedula;
     String nombreCompleto;
-    String genero;
+    char genero;
     String fechaNacimiento;
     String direccion;
     String numeroTelefono[];
@@ -22,14 +22,14 @@ public class Cliente {
     public Cliente() {
         this.cedula = "";
         this.nombreCompleto = "";
-        this.genero = "";
+        this.genero = ' ';
         this.fechaNacimiento = "";
         this.direccion = "";
         this.numeroTelefono = new String[2];
         this.correoElectronico = "";
     }
 
-    public Cliente(String cedula, String nombreCompleto, String genero, String fechaNacimiento, String direccion, String[] numeroTelefono, String correoElectronico) {
+    public Cliente(String cedula, String nombreCompleto, char genero, String fechaNacimiento, String direccion, String[] numeroTelefono, String correoElectronico) {
         this.cedula = cedula;
         this.nombreCompleto = nombreCompleto;
         this.genero = genero;
@@ -55,11 +55,11 @@ public class Cliente {
         this.nombreCompleto = nombreCompleto;
     }
 
-    public String getGenero() {
+    public char getGenero() {
         return genero;
     }
 
-    public void setGenero(String genero) {
+    public void setGenero(char genero) {
         this.genero = genero;
     }
 

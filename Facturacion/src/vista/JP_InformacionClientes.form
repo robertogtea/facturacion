@@ -27,15 +27,15 @@
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="jl_FechaNacimiento" max="32767" attributes="0"/>
                           <Component id="jLabel1" max="32767" attributes="0"/>
-                          <Component id="jl_NombreCompleto" alignment="0" max="32767" attributes="0"/>
                           <Component id="jl_Cedula" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jl_NombreCompleto" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="rb_Masculino" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="rb_femenino" min="-2" max="-2" attributes="0"/>
+                              <Component id="rb_Femenino" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="jl_Dia" min="-2" max="-2" attributes="0"/>
@@ -50,8 +50,8 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jcb_Anio" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jt_Cedula" alignment="0" pref="300" max="32767" attributes="0"/>
-                          <Component id="jt_NombreCompleto" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jt_NombreCompleto" alignment="0" pref="300" max="32767" attributes="0"/>
+                          <Component id="jt_Cedula" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
@@ -81,19 +81,19 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jt_NombreCompleto" pref="30" max="32767" attributes="0"/>
-                  <Component id="jl_NombreCompleto" max="32767" attributes="0"/>
+                  <Component id="jt_Cedula" pref="30" max="32767" attributes="0"/>
+                  <Component id="jl_Cedula" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jl_Cedula" max="32767" attributes="0"/>
-                  <Component id="jt_Cedula" pref="30" max="32767" attributes="0"/>
+                  <Component id="jl_NombreCompleto" max="32767" attributes="0"/>
+                  <Component id="jt_NombreCompleto" pref="30" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="rb_Masculino" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="rb_femenino" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="rb_Femenino" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -127,19 +127,22 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jl_NombreCompleto">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Nombre Completo: "/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="jl_Cedula">
       <Properties>
-        <Property name="text" type="java.lang.String" value="C&#xe9;dula: "/>
+        <Property name="text" type="java.lang.String" value="C&#xe9;dula:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jt_NombreCompleto">
+    <Component class="javax.swing.JLabel" name="jl_NombreCompleto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nombre Completo:"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jt_Cedula">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jt_NombreCompleto">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
@@ -149,11 +152,13 @@
     <Component class="javax.swing.JRadioButton" name="rb_Masculino">
       <Properties>
         <Property name="text" type="java.lang.String" value="Masculino"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="rb_femenino">
+    <Component class="javax.swing.JRadioButton" name="rb_Femenino">
       <Properties>
         <Property name="text" type="java.lang.String" value="Femenino"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jl_FechaNacimiento">
@@ -176,6 +181,7 @@
             <StringItem index="3" value="Item 4"/>
           </StringArray>
         </Property>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -196,6 +202,7 @@
             <StringItem index="3" value="Item 4"/>
           </StringArray>
         </Property>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -216,6 +223,7 @@
             <StringItem index="3" value="Item 4"/>
           </StringArray>
         </Property>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -227,8 +235,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jt_TelefonoA">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jt_TelefonoB">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jl_CorreoElectronico">
       <Properties>
@@ -236,6 +250,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jt_CorreoElectronico">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jl_Direccion">
       <Properties>
@@ -254,6 +271,7 @@
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
             <Property name="text" type="java.lang.String" value="&#xa;"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
       </SubComponents>

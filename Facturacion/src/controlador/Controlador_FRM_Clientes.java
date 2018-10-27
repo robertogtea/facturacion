@@ -7,6 +7,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import modelo.ConexionBD;
 import vista.FRM_MantenimientoClientes;
 
 /**
@@ -15,20 +16,28 @@ import vista.FRM_MantenimientoClientes;
  */
 public class Controlador_FRM_Clientes implements ActionListener{
     
+    ConexionBD conexion;
     FRM_MantenimientoClientes frm_MantenimientoClientes;
 
-    public Controlador_FRM_Clientes(FRM_MantenimientoClientes frm_MantenimientoClientes) {
+    public Controlador_FRM_Clientes(ConexionBD conexion, FRM_MantenimientoClientes frm_MantenimientoClientes) {
+        this.conexion = conexion;
         this.frm_MantenimientoClientes = frm_MantenimientoClientes;
     }//Fin de la clase
     
     public void actionPerformed(ActionEvent evento) {
         
         if(evento.getActionCommand().equals("Consultar")){
-            
+            if(conexion.consultarCliente(frm_MantenimientoClientes.obtenerCedula())){
+                frm_MantenimientoClientes.mostrarInformacionCliente(conexion.getClienteTemporal());
+                frm_MantenimientoClientes.habilitarModificarEliminar();
+            }else
+                frm_MantenimientoClientes.habilitarAgregar();
         }//Fin del metodo consultar
         
         if(evento.getActionCommand().equals("Agregar")){
+            /*if(conexion.agregarCliente(frm_MantenimientoClientes.getCliente())){
             
+            }//Fin del metodo agregar*/
         }//Fin del metodo agregar
         
         if(evento.getActionCommand().equals("Modificar")){

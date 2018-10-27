@@ -6,6 +6,8 @@
 package vista;
 
 import controlador.Controlador_FRM_Clientes;
+import modelo.Cliente;
+import modelo.ConexionBD;
 
 /**
  *
@@ -18,13 +20,30 @@ public class FRM_MantenimientoClientes extends javax.swing.JFrame {
      */
     Controlador_FRM_Clientes controlador;
     
-    public FRM_MantenimientoClientes() {
+    public FRM_MantenimientoClientes(ConexionBD conexion) {
         //setUndecorated(true);     Para quitar bordes de ventana en netbeans
         initComponents();
         setLocationRelativeTo(null);
-        controlador = new Controlador_FRM_Clientes(this);
+        controlador = new Controlador_FRM_Clientes(conexion, this);
         jP_Botones1.agregarEventosClientes(controlador);
     }//Fin del constructor
+    
+    public String obtenerCedula(){
+        return jP_InformacionClientes1.obtenerCedula();
+    }//Fin del metodo obtenerCedula
+    
+    public void mostrarInformacionCliente(Cliente cliente){
+        jP_InformacionClientes1.mostrarInformacionCliente(cliente);
+    }//Fin del metodo
+    
+    public void habilitarModificarEliminar(){
+        jP_Botones1.habilitarModificarEliminar();
+    }//Fin del metodo
+    
+    public void habilitarAgregar(){
+        jP_InformacionClientes1.habilitarAgregar();
+        jP_Botones1.habilitarAgregar();
+    }//Fin del metodo 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -84,4 +103,4 @@ public class FRM_MantenimientoClientes extends javax.swing.JFrame {
     private vista.JP_Botones jP_Botones1;
     private vista.JP_InformacionClientes jP_InformacionClientes1;
     // End of variables declaration//GEN-END:variables
-}
+}//Fin de la clase

@@ -5,6 +5,8 @@
  */
 package vista;
 
+import modelo.Cliente;
+
 /**
  *
  * @author Jose Rodolfo
@@ -16,7 +18,7 @@ public class JP_InformacionClientes extends javax.swing.JPanel {
      */
     public JP_InformacionClientes() {
         initComponents();
-        buttonGroup1.add(rb_femenino);
+        buttonGroup1.add(rb_Femenino);
         buttonGroup1.add(rb_Masculino);
         jcb_Dia.removeAllItems();
         jcb_Mes.removeAllItems();
@@ -26,6 +28,43 @@ public class JP_InformacionClientes extends javax.swing.JPanel {
         llenarAnio();
         jcb_Anio.setSelectedItem("1990");
     }//Fin del constructor
+    
+    public void mostrarInformacionCliente(Cliente cliente){
+        jt_NombreCompleto.setText(cliente.getCedula());
+        jt_Cedula.setText(cliente.getNombreCompleto());
+        
+        if(cliente.getGenero() == ('F'))
+            rb_Masculino.setSelected(true);
+        else
+            rb_Femenino.setSelected(true);
+        
+        //jcb_Dia.setSelectedItem(cliente.getFechaNacimiento());
+        //jcb_Mes.setSelectedItem(cliente.getFechaNacimiento());
+        //jcb_Anio.setSelectedItem(cliente.getFechaNacimiento());
+        
+        jt_TelefonoA.setText(cliente.getNumeroTelefono()[0]);
+        jt_TelefonoB.setText(cliente.getNumeroTelefono()[1]);
+        jt_CorreoElectronico.setText(cliente.getCorreoElectronico());
+        jta_Direccion.setText(cliente.getDireccion());
+    }//Fin del metodo mostrarInformacionCliente
+    
+    public void habilitarAgregar(){
+        jt_Cedula.setEnabled(false);
+        jt_NombreCompleto.setEnabled(true);
+        rb_Masculino.setEnabled(true);
+        rb_Femenino.setEnabled(true);
+        jcb_Dia.setEnabled(true);
+        jcb_Mes.setEnabled(true);
+        jcb_Anio.setEnabled(true);
+        jt_TelefonoA.setEnabled(true);
+        jt_TelefonoB.setEnabled(true);
+        jt_CorreoElectronico.setEnabled(true);
+        jta_Direccion.setEnabled(true);
+    }//Fin del metodo
+    
+    public String obtenerCedula(){
+        return jt_NombreCompleto.getText();
+    }//Fin del metodo obtenerCedula
     
     public void llenarDia(){
         for(int i=1; i<32; i++){
@@ -55,13 +94,13 @@ public class JP_InformacionClientes extends javax.swing.JPanel {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jl_NombreCompleto = new javax.swing.JLabel();
         jl_Cedula = new javax.swing.JLabel();
-        jt_NombreCompleto = new javax.swing.JTextField();
+        jl_NombreCompleto = new javax.swing.JLabel();
         jt_Cedula = new javax.swing.JTextField();
+        jt_NombreCompleto = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         rb_Masculino = new javax.swing.JRadioButton();
-        rb_femenino = new javax.swing.JRadioButton();
+        rb_Femenino = new javax.swing.JRadioButton();
         jl_FechaNacimiento = new javax.swing.JLabel();
         jl_Dia = new javax.swing.JLabel();
         jcb_Dia = new javax.swing.JComboBox<>();
@@ -78,39 +117,53 @@ public class JP_InformacionClientes extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jta_Direccion = new javax.swing.JTextArea();
 
-        jl_NombreCompleto.setText("Nombre Completo: ");
+        jl_Cedula.setText("Cédula:");
 
-        jl_Cedula.setText("Cédula: ");
+        jl_NombreCompleto.setText("Nombre Completo:");
+
+        jt_NombreCompleto.setEnabled(false);
 
         jLabel1.setText("Género: ");
 
         rb_Masculino.setText("Masculino");
+        rb_Masculino.setEnabled(false);
 
-        rb_femenino.setText("Femenino");
+        rb_Femenino.setText("Femenino");
+        rb_Femenino.setEnabled(false);
 
         jl_FechaNacimiento.setText("Fecha Nacimiento:");
 
         jl_Dia.setText("Día:");
 
         jcb_Dia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcb_Dia.setEnabled(false);
 
         jLabel2.setText("Mes: ");
 
         jcb_Mes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcb_Mes.setEnabled(false);
 
         jLabel3.setText("Año:");
 
         jcb_Anio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcb_Anio.setEnabled(false);
 
         jl_Telefonos.setText("Números de Teléfonos: ");
 
+        jt_TelefonoA.setEnabled(false);
+
+        jt_TelefonoB.setEnabled(false);
+
         jl_CorreoElectronico.setText("Correo Electrónico: ");
+
+        jt_CorreoElectronico.setEnabled(false);
 
         jl_Direccion.setText("Dirección:");
 
         jta_Direccion.setColumns(20);
         jta_Direccion.setRows(5);
         jta_Direccion.setText("\n");
+        jta_Direccion.setEnabled(false);
         jScrollPane1.setViewportView(jta_Direccion);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -124,14 +177,14 @@ public class JP_InformacionClientes extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jl_FechaNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jl_NombreCompleto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jl_Cedula, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jl_Cedula, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jl_NombreCompleto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(rb_Masculino)
                                 .addGap(18, 18, 18)
-                                .addComponent(rb_femenino))
+                                .addComponent(rb_Femenino))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jl_Dia)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -144,8 +197,8 @@ public class JP_InformacionClientes extends javax.swing.JPanel {
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jcb_Anio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jt_Cedula, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .addComponent(jt_NombreCompleto)))
+                            .addComponent(jt_NombreCompleto, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                            .addComponent(jt_Cedula)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jl_Telefonos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -166,17 +219,17 @@ public class JP_InformacionClientes extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jt_NombreCompleto, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                    .addComponent(jl_NombreCompleto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jt_Cedula, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(jl_Cedula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jl_Cedula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jt_Cedula, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                    .addComponent(jl_NombreCompleto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jt_NombreCompleto, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rb_Masculino)
-                    .addComponent(rb_femenino))
+                    .addComponent(rb_Femenino))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_FechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -226,7 +279,7 @@ public class JP_InformacionClientes extends javax.swing.JPanel {
     private javax.swing.JTextField jt_TelefonoA;
     private javax.swing.JTextField jt_TelefonoB;
     private javax.swing.JTextArea jta_Direccion;
+    private javax.swing.JRadioButton rb_Femenino;
     private javax.swing.JRadioButton rb_Masculino;
-    private javax.swing.JRadioButton rb_femenino;
     // End of variables declaration//GEN-END:variables
 }

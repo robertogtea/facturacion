@@ -11,6 +11,7 @@ import java.util.logging.Logger;
 public class ConexionBD {
     
     Connection con = null;
+    Cliente clienteTemporal;
     
     public ConexionBD(){
     }
@@ -29,6 +30,23 @@ public class ConexionBD {
             e.printStackTrace();
         }
         return encontrado;
-    }//Fin del método
+    }//Fin del metodo
+    
+    public boolean consultarCliente(String cedula){
+        boolean encontrado = false;
+        
+        
+        return encontrado;
+    }//Fin del metodo consultarCliente
+    
+    public boolean agregarCliente(){
+        boolean agregado = false;
+        
+        return agregado;
+    }//Fin del  medodo agregarCliente
+    
+    public Cliente getClienteTemporal(){
+        return clienteTemporal;
+    }//Fin del metodo getClienteTemporal 
     
 }//Fin de la clase

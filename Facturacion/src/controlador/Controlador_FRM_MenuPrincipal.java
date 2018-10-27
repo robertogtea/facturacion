@@ -26,6 +26,7 @@ public class Controlador_FRM_MenuPrincipal implements ActionListener{
     public Controlador_FRM_MenuPrincipal(FRM_MenuPrincipal frm_MenuPrincipal){
         conexion=new ConexionBD();
         this.frm_MenuPrincipal=frm_MenuPrincipal;
+        frm_MantenimientoClientes = new FRM_MantenimientoClientes(conexion);
         frm_MantenimientoUsuarios= new FRM_MantenimientoUsuarios();
         //conexion.realizarConexion();
     }
@@ -44,7 +45,6 @@ public class Controlador_FRM_MenuPrincipal implements ActionListener{
             System.out.println("MantenimientoProductos");
         }
         if(evento.getActionCommand().equals("MantenimientoClientes")){
-           frm_MantenimientoClientes = new FRM_MantenimientoClientes();
            this.frm_MantenimientoClientes.setVisible(true);
         }
         if(evento.getActionCommand().equals("MantenimientoProveedores"))
