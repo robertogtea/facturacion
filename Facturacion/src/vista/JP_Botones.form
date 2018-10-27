@@ -35,10 +35,10 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btn_Eliminar" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                  <Component id="btn_Modificar" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btn_Consultar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btn_Agregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btn_Modificar" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -52,6 +52,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/iconos/buscar.png"/>
         </Property>
+        <Property name="actionCommand" type="java.lang.String" value="Consultar"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btn_Agregar">
@@ -59,6 +60,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/iconos/agregar.png"/>
         </Property>
+        <Property name="actionCommand" type="java.lang.String" value="Agregar"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
@@ -67,6 +69,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/iconos/modificar.png"/>
         </Property>
+        <Property name="actionCommand" type="java.lang.String" value="Modificar"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
@@ -75,8 +78,12 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/iconos/eliminar.png"/>
         </Property>
+        <Property name="actionCommand" type="java.lang.String" value="Eliminar"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_EliminarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

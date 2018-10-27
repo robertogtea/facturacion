@@ -7,6 +7,8 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import modelo.ConexionBD;
+import vista.FRM_MantenimientoClientes;
 import vista.FRM_MantenimientoUsuarios;
 import vista.FRM_MenuPrincipal;
 
@@ -19,12 +21,13 @@ public class Controlador_FRM_MenuPrincipal implements ActionListener{
     FRM_MenuPrincipal frm_MenuPrincipal;
     FRM_MantenimientoUsuarios frm_MantenimientoUsuarios;
     ConexionBD conexion;
-    public Controlador_FRM_MenuPrincipal(FRM_MenuPrincipal frm_MenuPrincipal)
-    {
+    FRM_MantenimientoClientes frm_MantenimientoClientes;
+    
+    public Controlador_FRM_MenuPrincipal(FRM_MenuPrincipal frm_MenuPrincipal){
+        conexion=new ConexionBD();
         this.frm_MenuPrincipal=frm_MenuPrincipal;
         frm_MantenimientoUsuarios= new FRM_MantenimientoUsuarios();
-        conexion=new ConexionBD();
-        conexion.realizarConexion();
+        //conexion.realizarConexion();
     }
     public void actionPerformed(ActionEvent evento)
     {
@@ -40,9 +43,9 @@ public class Controlador_FRM_MenuPrincipal implements ActionListener{
         {
             System.out.println("MantenimientoProductos");
         }
-        if(evento.getActionCommand().equals("MantenimientoClientes"))
-        {
-           System.out.println("MantenimientoClientes");
+        if(evento.getActionCommand().equals("MantenimientoClientes")){
+           frm_MantenimientoClientes = new FRM_MantenimientoClientes();
+           this.frm_MantenimientoClientes.setVisible(true);
         }
         if(evento.getActionCommand().equals("MantenimientoProveedores"))
         {

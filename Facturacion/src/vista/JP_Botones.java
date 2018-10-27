@@ -5,6 +5,8 @@
  */
 package vista;
 
+import controlador.Controlador_FRM_Clientes;
+
 /**
  *
  * @author Roberto
@@ -17,6 +19,13 @@ public class JP_Botones extends javax.swing.JPanel {
     public JP_Botones() {
         initComponents();
     }
+    
+    public void agregarEventosClientes(Controlador_FRM_Clientes controlador){
+        btn_Agregar.addActionListener(controlador);
+        btn_Consultar.addActionListener(controlador);
+        btn_Eliminar.addActionListener(controlador);
+        btn_Modificar.addActionListener(controlador);
+    }//Fin del metodo agregarEventosClientes
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,15 +42,24 @@ public class JP_Botones extends javax.swing.JPanel {
         btn_Eliminar = new javax.swing.JButton();
 
         btn_Consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/buscar.png"))); // NOI18N
+        btn_Consultar.setActionCommand("Consultar");
 
         btn_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/agregar.png"))); // NOI18N
+        btn_Agregar.setActionCommand("Agregar");
         btn_Agregar.setEnabled(false);
 
         btn_Modificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/modificar.png"))); // NOI18N
+        btn_Modificar.setActionCommand("Modificar");
         btn_Modificar.setEnabled(false);
 
         btn_Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/eliminar.png"))); // NOI18N
+        btn_Eliminar.setActionCommand("Eliminar");
         btn_Eliminar.setEnabled(false);
+        btn_Eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_EliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -64,13 +82,17 @@ public class JP_Botones extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btn_Consultar)
-                        .addComponent(btn_Agregar)
-                        .addComponent(btn_Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn_Agregar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_EliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
