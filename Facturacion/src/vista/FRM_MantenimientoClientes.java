@@ -26,7 +26,12 @@ public class FRM_MantenimientoClientes extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         controlador = new Controlador_FRM_Clientes(conexion, this);
         jP_Botones1.agregarEventosClientes(controlador);
+        btn_Reporte.addActionListener(controlador);
     }//Fin del constructor
+    
+    public void limpiarVentana(){
+        jP_InformacionClientes1.limpiarVentana();
+    }//Fin del metodo limpiarVentana
     
     public String obtenerCedula(){
         return jP_InformacionClientes1.obtenerCedula();
@@ -44,6 +49,10 @@ public class FRM_MantenimientoClientes extends javax.swing.JFrame {
         jP_InformacionClientes1.habilitarAgregar();
         jP_Botones1.habilitarAgregar();
     }//Fin del metodo 
+    
+    public Cliente getCliente(){
+        return jP_InformacionClientes1.getCliente();
+    }//Fin del metodo getCliente    
 
     /**
      * This method is called from within the constructor to initialize the form.

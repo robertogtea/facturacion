@@ -29,6 +29,23 @@ public class JP_InformacionClientes extends javax.swing.JPanel {
         jcb_Anio.setSelectedItem("1990");
     }//Fin del constructor
     
+    public void limpiarVentana(){
+        jt_NombreCompleto.setText("");
+        jt_Cedula.setText("");
+        
+        rb_Masculino.setSelected(false);
+        rb_Femenino.setSelected(false);
+        
+        jcb_Dia.setSelectedItem("1");
+        jcb_Mes.setSelectedItem("1");
+        jcb_Anio.setSelectedItem("1990");
+        
+        jt_TelefonoA.setText("");
+        jt_TelefonoB.setText("");
+        jt_CorreoElectronico.setText("");
+        jta_Direccion.setText("");
+    }//Fin del metodo limpiarVentana
+    
     public void mostrarInformacionCliente(Cliente cliente){
         jt_NombreCompleto.setText(cliente.getCedula());
         jt_Cedula.setText(cliente.getNombreCompleto());
@@ -65,6 +82,19 @@ public class JP_InformacionClientes extends javax.swing.JPanel {
     public String obtenerCedula(){
         return jt_NombreCompleto.getText();
     }//Fin del metodo obtenerCedula
+    
+    public Cliente getCliente(){
+        char seleccionado = 'F';
+        if(rb_Masculino.isSelected())
+            seleccionado = 'M';
+        
+        String telefonos[] = new String[2];
+        telefonos[0] = jt_TelefonoA.getText();
+        telefonos[1] = jt_TelefonoB.getText();
+        
+        return new Cliente(jt_Cedula.getText(), jt_NombreCompleto.getText(), seleccionado, "", jta_Direccion.getText(),
+                telefonos ,jt_CorreoElectronico.getText());
+    }//Fin del metodo
     
     public void llenarDia(){
         for(int i=1; i<32; i++){

@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import modelo.ConexionBD;
 import vista.FRM_MantenimientoClientes;
+import vista.FRM_ReporteClientes;
 
 /**
  *
@@ -18,6 +19,7 @@ public class Controlador_FRM_Clientes implements ActionListener{
     
     ConexionBD conexion;
     FRM_MantenimientoClientes frm_MantenimientoClientes;
+    FRM_ReporteClientes frm_ReporteClientes;
 
     public Controlador_FRM_Clientes(ConexionBD conexion, FRM_MantenimientoClientes frm_MantenimientoClientes) {
         this.conexion = conexion;
@@ -35,21 +37,25 @@ public class Controlador_FRM_Clientes implements ActionListener{
         }//Fin del metodo consultar
         
         if(evento.getActionCommand().equals("Agregar")){
-            /*if(conexion.registrarCliente(frm_MantenimientoClientes.getCliente())){
+            if(conexion.registrarCliente(frm_MantenimientoClientes.getCliente())){
+                frm_MantenimientoClientes.limpiarVentana();
+            }//Fin del if
             
-            }//Fin del metodo agregar*/
         }//Fin del metodo agregar
         
         if(evento.getActionCommand().equals("Modificar")){
-            
+            if(conexion.modificarCliente(frm_MantenimientoClientes.getCliente()));
+                frm_MantenimientoClientes.limpiarVentana();
         }//Fin del metodo modificar
         
         if(evento.getActionCommand().equals("Eliminar")){
-            
+            if(conexion.eliminarCliente(frm_MantenimientoClientes.obtenerCedula())) ;
+                frm_MantenimientoClientes.limpiarVentana();
         }//Fin del metodo eliminar
         
         if(evento.getActionCommand().equals("Reporte")){
-        
+            frm_ReporteClientes = new FRM_ReporteClientes();
+            frm_ReporteClientes.setVisible(true);
         }//Fin del metodo reporte
         
     }//Fin del método eventos
