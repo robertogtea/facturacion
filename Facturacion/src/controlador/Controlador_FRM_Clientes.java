@@ -35,7 +35,7 @@ public class Controlador_FRM_Clientes implements ActionListener{
         }//Fin del metodo consultar
         
         if(evento.getActionCommand().equals("Agregar")){
-            /*if(conexion.agregarCliente(frm_MantenimientoClientes.getCliente())){
+            /*if(conexion.registrarCliente(frm_MantenimientoClientes.getCliente())){
             
             }//Fin del metodo agregar*/
         }//Fin del metodo agregar

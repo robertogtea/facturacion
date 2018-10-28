@@ -32,21 +32,36 @@ public class ConexionBD {
         return encontrado;
     }//Fin del metodo
     
+    //Aquí empieza módulo de Clientes sobre la base de datos (Rodo)
+    
     public boolean consultarCliente(String cedula){
-        boolean encontrado = false;
-        
+        boolean encontrado = false;       
         
         return encontrado;
     }//Fin del metodo consultarCliente
     
-    public boolean agregarCliente(){
-        boolean agregado = false;
+    public boolean registrarCliente(Cliente cliente){
+        boolean ejecuto = false;
         
-        return agregado;
+        return ejecuto;
     }//Fin del  medodo agregarCliente
+    
+    public boolean modificarCliente(Cliente cliente){
+        boolean ejecuto = false;
+        
+        return ejecuto;
+    }//Fin del metodo modificarCliente
+    
+    public boolean eliminarCliente(String cedula){
+        boolean ejecuto = false;
+        
+        return ejecuto;
+    }//Fin del metodo
     
     public Cliente getClienteTemporal(){
         return clienteTemporal;
     }//Fin del metodo getClienteTemporal 
+    
+    //Aquí termina el módulo de clientes
     
 }//Fin de la clase
