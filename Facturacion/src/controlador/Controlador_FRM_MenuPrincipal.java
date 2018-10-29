@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import modelo.ConexionBD;
 import vista.FRM_MantenimientoClientes;
+import vista.FRM_MantenimientoProveedores;
 import vista.FRM_MantenimientoUsuarios;
 import vista.FRM_MenuPrincipal;
 
@@ -22,12 +23,14 @@ public class Controlador_FRM_MenuPrincipal implements ActionListener{
     FRM_MantenimientoUsuarios frm_MantenimientoUsuarios;
     ConexionBD conexion;
     FRM_MantenimientoClientes frm_MantenimientoClientes;
+    FRM_MantenimientoProveedores frm_MantenimientoProveedores;
     
     public Controlador_FRM_MenuPrincipal(FRM_MenuPrincipal frm_MenuPrincipal){
         conexion=new ConexionBD();
         this.frm_MenuPrincipal=frm_MenuPrincipal;
         frm_MantenimientoClientes = new FRM_MantenimientoClientes(conexion);
-        frm_MantenimientoUsuarios= new FRM_MantenimientoUsuarios();
+        frm_MantenimientoUsuarios = new FRM_MantenimientoUsuarios();
+        frm_MantenimientoProveedores = new FRM_MantenimientoProveedores();
         //conexion.realizarConexion();
     }
     public void actionPerformed(ActionEvent evento)
@@ -49,6 +52,7 @@ public class Controlador_FRM_MenuPrincipal implements ActionListener{
         }
         if(evento.getActionCommand().equals("MantenimientoProveedores"))
         {
+            frm_MantenimientoProveedores.setVisible(true);
             System.out.println("MantenimientoProveedores");
         }
         if(evento.getActionCommand().equals("MantenimientoUsuarios"))

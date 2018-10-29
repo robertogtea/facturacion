@@ -12,6 +12,7 @@ public class ConexionBD {
     
     Connection con = null;
     Cliente clienteTemporal;
+    Proveedor proveedorTemporal;
     
     public ConexionBD(){
     }
@@ -60,6 +61,35 @@ public class ConexionBD {
     
     public Cliente getClienteTemporal(){
         return clienteTemporal;
+    }//Fin del metodo getClienteTemporal 
+    
+    
+     public boolean consultarProveedor(String cedula){
+        boolean encontrado = false;       
+        
+        return encontrado;
+    }//Fin del metodo consultarCliente
+    
+    public boolean registrarProveedor(Proveedor proveedor){
+        boolean ejecuto = false;
+        
+        return ejecuto;
+    }//Fin del  medodo agregarCliente
+    
+    public boolean modificarProveedor(Proveedor proveedor){
+        boolean ejecuto = false;
+        
+        return ejecuto;
+    }//Fin del metodo modificarCliente
+    
+    public boolean eliminarProveedor(String cedula){
+        boolean ejecuto = false;
+        
+        return ejecuto;
+    }//Fin del metodo
+    
+    public Proveedor getProveedorTemporal(){
+        return proveedorTemporal;
     }//Fin del metodo getClienteTemporal 
     
     //Aquí termina el módulo de clientes

@@ -6,6 +6,7 @@
 package vista;
 
 import controlador.Controlador_FRM_Clientes;
+import controlador.Controlador_FRM_MantenimientoProveedores;
 
 /**
  *
@@ -27,6 +28,13 @@ public class JP_Botones extends javax.swing.JPanel {
         btn_Modificar.addActionListener(controlador);
     }//Fin del metodo agregarEventosClientes
     
+    public void agregarEventosProveedores(Controlador_FRM_MantenimientoProveedores controlador){
+        btn_Agregar.addActionListener(controlador);
+        btn_Consultar.addActionListener(controlador);
+        btn_Eliminar.addActionListener(controlador);
+        btn_Modificar.addActionListener(controlador);
+    }//Fin del metodo agregarEventosClientes
+    
     public void habilitarModificarEliminar(){
         btn_Agregar.setEnabled(false);
         btn_Consultar.setEnabled(false);
@@ -37,6 +45,13 @@ public class JP_Botones extends javax.swing.JPanel {
     public void habilitarAgregar(){
         btn_Agregar.setEnabled(true);
         btn_Consultar.setEnabled(false);
+        btn_Eliminar.setEnabled(false);
+        btn_Modificar.setEnabled(false);
+    }//Fin del metodo
+    
+    public void estadoInicial(){
+        btn_Agregar.setEnabled(false);
+        btn_Consultar.setEnabled(true);
         btn_Eliminar.setEnabled(false);
         btn_Modificar.setEnabled(false);
     }//Fin del metodo
@@ -57,10 +72,20 @@ public class JP_Botones extends javax.swing.JPanel {
 
         btn_Consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/buscar.png"))); // NOI18N
         btn_Consultar.setActionCommand("Consultar");
+        btn_Consultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ConsultarActionPerformed(evt);
+            }
+        });
 
         btn_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/agregar.png"))); // NOI18N
         btn_Agregar.setActionCommand("Agregar");
         btn_Agregar.setEnabled(false);
+        btn_Agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_AgregarActionPerformed(evt);
+            }
+        });
 
         btn_Modificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/modificar.png"))); // NOI18N
         btn_Modificar.setActionCommand("Modificar");
@@ -107,6 +132,14 @@ public class JP_Botones extends javax.swing.JPanel {
     private void btn_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_EliminarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_EliminarActionPerformed
+
+    private void btn_AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_AgregarActionPerformed
+
+    private void btn_ConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ConsultarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_ConsultarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

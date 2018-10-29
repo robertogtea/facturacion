@@ -31,6 +31,7 @@ public class FRM_MantenimientoClientes extends javax.swing.JFrame {
     
     public void limpiarVentana(){
         jP_InformacionClientes1.limpiarVentana();
+        jP_Botones1.estadoInicial();
     }//Fin del metodo limpiarVentana
     
     public String obtenerCedula(){
