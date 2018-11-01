@@ -71,6 +71,7 @@ public class JP_Botones extends javax.swing.JPanel {
         btn_Eliminar = new javax.swing.JButton();
 
         btn_Consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/buscar.png"))); // NOI18N
+        btn_Consultar.setToolTipText("Consultar");
         btn_Consultar.setActionCommand("Consultar");
         btn_Consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,6 +80,7 @@ public class JP_Botones extends javax.swing.JPanel {
         });
 
         btn_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/agregar.png"))); // NOI18N
+        btn_Agregar.setToolTipText("Agregar");
         btn_Agregar.setActionCommand("Agregar");
         btn_Agregar.setEnabled(false);
         btn_Agregar.addActionListener(new java.awt.event.ActionListener() {
@@ -88,10 +90,12 @@ public class JP_Botones extends javax.swing.JPanel {
         });
 
         btn_Modificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/modificar.png"))); // NOI18N
+        btn_Modificar.setToolTipText("Modificar");
         btn_Modificar.setActionCommand("Modificar");
         btn_Modificar.setEnabled(false);
 
         btn_Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/eliminar.png"))); // NOI18N
+        btn_Eliminar.setToolTipText("Eliminar");
         btn_Eliminar.setActionCommand("Eliminar");
         btn_Eliminar.setEnabled(false);
         btn_Eliminar.addActionListener(new java.awt.event.ActionListener() {

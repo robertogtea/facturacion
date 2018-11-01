@@ -41,6 +41,7 @@ FRM_MantenimientoProveedores frm_MantenimientoProveedores;
         
         if(ev.getActionCommand().equals("Agregar"))
         {
+            System.out.println("Agregar");
             conexion.registrarProveedor(frm_MantenimientoProveedores.getProveedor());
             frm_MantenimientoProveedores.limpiarVentana();
             
@@ -48,6 +49,7 @@ FRM_MantenimientoProveedores frm_MantenimientoProveedores;
         
         if(ev.getActionCommand().equals("Modificar"))
         {
+            System.out.println("Modificar");
             conexion.modificarProveedor(frm_MantenimientoProveedores.getProveedor());
             frm_MantenimientoProveedores.limpiarVentana();
             
@@ -55,6 +57,7 @@ FRM_MantenimientoProveedores frm_MantenimientoProveedores;
         
         if(ev.getActionCommand().equals("Eliminar"))
         {
+            System.out.println("Eliminar");
             conexion.eliminarProveedor(frm_MantenimientoProveedores.obtenerCedula());
             frm_MantenimientoProveedores.limpiarVentana();
             
