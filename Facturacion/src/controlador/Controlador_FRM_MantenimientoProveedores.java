@@ -19,8 +19,8 @@ ConexionBD conexion;
 FRM_MantenimientoProveedores frm_MantenimientoProveedores;
     public Controlador_FRM_MantenimientoProveedores(ConexionBD conexion,FRM_MantenimientoProveedores frm_MantenimientoProveedores ) 
     {
-        frm_MantenimientoProveedores=frm_MantenimientoProveedores;
         this.conexion=conexion;
+        this.frm_MantenimientoProveedores= frm_MantenimientoProveedores;
     }//constructor
     
     public void actionPerformed(ActionEvent ev)

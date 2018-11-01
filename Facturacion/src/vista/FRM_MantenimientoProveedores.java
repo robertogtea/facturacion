@@ -48,6 +48,7 @@ public class FRM_MantenimientoProveedores extends javax.swing.JFrame {
     public void limpiarVentana()
     {
         jP_InformacionProveedor2.limpiarVentana();
+        jP_Botones1.estadoInicial();
     }
     
     public Proveedor getProveedor()
