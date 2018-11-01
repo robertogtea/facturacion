@@ -30,7 +30,7 @@ public class Controlador_FRM_MenuPrincipal implements ActionListener{
         this.frm_MenuPrincipal=frm_MenuPrincipal;
         frm_MantenimientoClientes = new FRM_MantenimientoClientes(conexion);
         frm_MantenimientoUsuarios = new FRM_MantenimientoUsuarios();
-        frm_MantenimientoProveedores = new FRM_MantenimientoProveedores();
+        frm_MantenimientoProveedores = new FRM_MantenimientoProveedores(conexion);
         //conexion.realizarConexion();
     }
     public void actionPerformed(ActionEvent evento)

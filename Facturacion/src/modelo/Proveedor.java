@@ -14,24 +14,14 @@ public class Proveedor {
     
     private String cedula;
     private String nombreEmpresa;
-    private String telefono;
-    private String correo;
-    private String nombreProveedor;
+    private String direecion;
+    private String productos;
 
-    public Proveedor(String cedula, String nombreEmpresa, String telefono, String correo, String nombreProveedor) {
+    public Proveedor(String cedula, String nombreEmpresa, String direecion, String productos) {
         this.cedula = cedula;
         this.nombreEmpresa = nombreEmpresa;
-        this.telefono = telefono;
-        this.correo = correo;
-        this.nombreProveedor = nombreProveedor;
-    }
-    
-     public Proveedor() {
-        this.cedula = "";
-        this.nombreEmpresa = "";
-        this.telefono = "";
-        this.correo = "";
-        this.nombreProveedor = "";
+        this.direecion = direecion;
+        this.productos = productos;
     }
 
     public String getCedula() {
@@ -50,29 +40,23 @@ public class Proveedor {
         this.nombreEmpresa = nombreEmpresa;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getDireecion() {
+        return direecion;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setDireecion(String direecion) {
+        this.direecion = direecion;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getProductos() {
+        return productos;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setProductos(String productos) {
+        this.productos = productos;
     }
 
-    public String getNombreProveedor() {
-        return nombreProveedor;
-    }
-
-    public void setNombreProveedor(String nombreProveedor) {
-        this.nombreProveedor = nombreProveedor;
-    }
+    
      
      
     

@@ -6,6 +6,7 @@
 package vista;
 
 import controlador.Controlador_FRM_MantenimientoProveedores;
+import modelo.ConexionBD;
 import modelo.Proveedor;
 
 /**
@@ -18,20 +19,20 @@ public class FRM_MantenimientoProveedores extends javax.swing.JFrame {
      * Creates new form FRM_MantenimientoProveedores
      */
     Controlador_FRM_MantenimientoProveedores controlador;
-    public FRM_MantenimientoProveedores() {
+    public FRM_MantenimientoProveedores(ConexionBD conexion) {
         initComponents();
         setLocationRelativeTo(null);
-        controlador = new Controlador_FRM_MantenimientoProveedores();
+        controlador = new Controlador_FRM_MantenimientoProveedores(conexion,this);
         jP_Botones1.agregarEventosProveedores(controlador);
     } 
     
     public String obtenerCedula(){
-       return jP_InformacionProveedor1.obtenerCedula();
+       return jP_InformacionProveedor2.obtenerCedula();
     }
     
     public void mostrarInformacion(Proveedor proveedor)
     {
-        jP_InformacionProveedor1.mostrarInformacion(proveedor);
+        jP_InformacionProveedor2.mostrarInformacion(proveedor);
     }
     
     public void habilitarModificarEliminar()
@@ -40,18 +41,18 @@ public class FRM_MantenimientoProveedores extends javax.swing.JFrame {
     }
     
     public void habilitarAgregar(){
-        jP_InformacionProveedor1.habilitarAgregar();
+        jP_InformacionProveedor2.habilitarAgregar();
         jP_Botones1.habilitarAgregar();
     }
     
     public void limpiarVentana()
     {
-        jP_InformacionProveedor1.limpiarVentana();
+        jP_InformacionProveedor2.limpiarVentana();
     }
     
     public Proveedor getProveedor()
     {
-        return jP_InformacionProveedor1.getProveedor();
+        return jP_InformacionProveedor2.getProveedor();
         
     }
 
@@ -64,8 +65,8 @@ public class FRM_MantenimientoProveedores extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jP_InformacionProveedor1 = new vista.JP_InformacionProveedor();
         jP_Botones1 = new vista.JP_Botones();
+        jP_InformacionProveedor2 = new vista.JP_InformacionProveedor();
 
         setTitle("Registro de Proveedores");
 
@@ -74,20 +75,21 @@ public class FRM_MantenimientoProveedores extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jP_InformacionProveedor1, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jP_InformacionProveedor2, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(jP_Botones1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jP_Botones1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jP_InformacionProveedor1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jP_InformacionProveedor2, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
                 .addComponent(jP_Botones1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 25, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -100,6 +102,6 @@ public class FRM_MantenimientoProveedores extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private vista.JP_Botones jP_Botones1;
-    private vista.JP_InformacionProveedor jP_InformacionProveedor1;
+    private vista.JP_InformacionProveedor jP_InformacionProveedor2;
     // End of variables declaration//GEN-END:variables
 }

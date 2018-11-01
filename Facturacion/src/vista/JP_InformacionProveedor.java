@@ -29,15 +29,13 @@ public class JP_InformacionProveedor extends javax.swing.JPanel {
     {
         jt_Cedula.setText("");
         jt_NombreEmpresa.setText("");
-        jt_NumeroTelef1.setText("");
-        jt_CorreoElectronico.setText("");
-        jt_NombreProveedor.setText("");
+        jt_Direccion.setText("");
+        jt_Productos.setText("");
         
         jt_Cedula.setEnabled(true);
         jt_NombreEmpresa.setEnabled(false);
-        jt_NumeroTelef1.setEnabled(false);
-        jt_CorreoElectronico.setEnabled(false);
-        jt_NombreProveedor.setEnabled(false);
+        jt_Direccion.setEnabled(false);
+        jt_Productos.setEnabled(false);
         
     }
     
@@ -45,23 +43,21 @@ public class JP_InformacionProveedor extends javax.swing.JPanel {
     {
         jt_Cedula.setText(proveedor.getCedula());
         jt_NombreEmpresa.setText(proveedor.getNombreEmpresa());
-        jt_NumeroTelef1.setText(proveedor.getTelefono());
-        jt_CorreoElectronico.setText(proveedor.getCorreo());
-        jt_NombreProveedor.setText(proveedor.getNombreProveedor());
+        jt_Direccion.setText(proveedor.getDireecion());
+        jt_Productos.setText(proveedor.getProductos());
     } 
     
     public void habilitarAgregar()
     {
         jt_Cedula.setEnabled(false);
         jt_NombreEmpresa.setEnabled(true);
-        jt_NumeroTelef1.setEnabled(true);
-        jt_CorreoElectronico.setEnabled(true);
-        jt_NombreProveedor.setEnabled(true);
+        jt_Direccion.setEnabled(true);
+        jt_Productos.setEnabled(true);
     }
     
     public Proveedor getProveedor()
     {
-        Proveedor proveedor= new Proveedor(jt_Cedula.getText(), jt_NombreEmpresa.getText(),jt_NumeroTelef1.getText(),jt_CorreoElectronico.getText(), jt_NombreProveedor.getText());
+        Proveedor proveedor= new Proveedor(jt_Cedula.getText(), jt_NombreEmpresa.getText(),jt_Direccion.getText(),jt_Productos.getText());
         return proveedor;
     }
 
@@ -76,35 +72,29 @@ public class JP_InformacionProveedor extends javax.swing.JPanel {
 
         jLabel2 = new javax.swing.JLabel();
         jl_Cedula = new javax.swing.JLabel();
-        jl_NombreEmpresa = new javax.swing.JLabel();
-        jl_Telefono = new javax.swing.JLabel();
-        jl_Correo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jl_Nombre = new javax.swing.JLabel();
         jt_Cedula = new javax.swing.JTextField();
         jt_NombreEmpresa = new javax.swing.JTextField();
-        jt_NumeroTelef1 = new javax.swing.JTextField();
-        jt_CorreoElectronico = new javax.swing.JTextField();
-        jt_NombreProveedor = new javax.swing.JTextField();
+        jl_DireccionP = new javax.swing.JLabel();
+        jt_Direccion = new javax.swing.JTextField();
+        jl_Productos = new javax.swing.JLabel();
+        jt_Productos = new javax.swing.JTextField();
 
         jLabel2.setText("jLabel2");
 
         jl_Cedula.setText("Cedula:");
 
-        jl_NombreEmpresa.setText("Nombre de la Empresa:");
-
-        jl_Telefono.setText("Números Teléfonicos:");
-
-        jl_Correo.setText("Correo Electrónico:");
-
-        jLabel1.setText("Nombre del Proveedor:");
+        jl_Nombre.setText("Nombre de la Empresa:");
 
         jt_NombreEmpresa.setEnabled(false);
 
-        jt_NumeroTelef1.setEnabled(false);
+        jl_DireccionP.setText("Dirección:");
 
-        jt_CorreoElectronico.setEnabled(false);
+        jt_Direccion.setEnabled(false);
 
-        jt_NombreProveedor.setEnabled(false);
+        jl_Productos.setText("Productos:");
+
+        jt_Productos.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -112,23 +102,18 @@ public class JP_InformacionProveedor extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jt_NombreProveedor))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jl_NombreEmpresa)
-                            .addComponent(jl_Cedula)
-                            .addComponent(jl_Telefono)
-                            .addComponent(jl_Correo))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jt_NumeroTelef1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jt_NombreEmpresa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                            .addComponent(jt_Cedula, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jt_CorreoElectronico))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jl_Nombre)
+                    .addComponent(jl_Cedula)
+                    .addComponent(jl_DireccionP)
+                    .addComponent(jl_Productos))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jt_Productos, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jt_Direccion, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jt_NombreEmpresa, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                        .addComponent(jt_Cedula)))
                 .addContainerGap(101, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -141,38 +126,29 @@ public class JP_InformacionProveedor extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jt_NombreEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl_NombreEmpresa))
+                    .addComponent(jl_Nombre))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jt_NumeroTelef1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl_Telefono))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_Correo)
-                    .addComponent(jt_CorreoElectronico, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jt_NombreProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(55, Short.MAX_VALUE))
+                    .addComponent(jl_DireccionP)
+                    .addComponent(jt_Direccion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jl_Productos)
+                    .addComponent(jt_Productos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jl_Cedula;
-    private javax.swing.JLabel jl_Correo;
-    private javax.swing.JLabel jl_NombreEmpresa;
-    private javax.swing.JLabel jl_Telefono;
+    private javax.swing.JLabel jl_DireccionP;
+    private javax.swing.JLabel jl_Nombre;
+    private javax.swing.JLabel jl_Productos;
     private javax.swing.JTextField jt_Cedula;
-    private javax.swing.JTextField jt_CorreoElectronico;
+    private javax.swing.JTextField jt_Direccion;
     private javax.swing.JTextField jt_NombreEmpresa;
-    private javax.swing.JTextField jt_NombreProveedor;
-    private javax.swing.JTextField jt_NumeroTelef1;
+    private javax.swing.JTextField jt_Productos;
     // End of variables declaration//GEN-END:variables
 }

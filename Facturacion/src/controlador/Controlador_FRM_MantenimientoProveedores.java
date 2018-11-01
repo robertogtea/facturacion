@@ -17,7 +17,7 @@ import vista.FRM_MantenimientoProveedores;
 public class Controlador_FRM_MantenimientoProveedores implements ActionListener {
 ConexionBD conexion;
 FRM_MantenimientoProveedores frm_MantenimientoProveedores;
-    public Controlador_FRM_MantenimientoProveedores() 
+    public Controlador_FRM_MantenimientoProveedores(ConexionBD conexion,FRM_MantenimientoProveedores frm_MantenimientoProveedores ) 
     {
         frm_MantenimientoProveedores=frm_MantenimientoProveedores;
         this.conexion=conexion;
