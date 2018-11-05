@@ -20,6 +20,7 @@ public class FRM_MantenimientoUsuarios extends javax.swing.JFrame {
     DefaultTableModel modelo;
     public FRM_MantenimientoUsuarios() {
         initComponents();
+        setLocationRelativeTo(null);
         titulos=new String[3];
         titulos[0]="Usuario";
         titulos[1]="Nombre Completo";
