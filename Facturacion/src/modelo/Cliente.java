@@ -12,32 +12,23 @@ package modelo;
 public class Cliente {
     
     String cedula;
-    String nombreCompleto;
-    char genero;
-    String fechaNacimiento;
+    String nombre;
+    String apellidos;
     String direccion;
-    String numeroTelefono[];
-    String correoElectronico;
 
     public Cliente() {
-        this.cedula = "";
-        this.nombreCompleto = "";
-        this.genero = ' ';
-        this.fechaNacimiento = "";
-        this.direccion = "";
-        this.numeroTelefono = new String[2];
-        this.correoElectronico = "";
+        cedula = "";
+        nombre = "";
+        apellidos = "";
+        direccion = "";
     }
 
-    public Cliente(String cedula, String nombreCompleto, char genero, String fechaNacimiento, String direccion, String[] numeroTelefono, String correoElectronico) {
+    public Cliente(String cedula, String nombre, String apellidos, String direccion) {
         this.cedula = cedula;
-        this.nombreCompleto = nombreCompleto;
-        this.genero = genero;
-        this.fechaNacimiento = fechaNacimiento;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
         this.direccion = direccion;
-        this.numeroTelefono = numeroTelefono;
-        this.correoElectronico = correoElectronico;
-    }
+    }//Fin de los constructores
 
     public String getCedula() {
         return cedula;
@@ -47,28 +38,20 @@ public class Cliente {
         this.cedula = cedula;
     }
 
-    public String getNombreCompleto() {
-        return nombreCompleto;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public char getGenero() {
-        return genero;
+    public String getApellidos() {
+        return apellidos;
     }
 
-    public void setGenero(char genero) {
-        this.genero = genero;
-    }
-
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
     public String getDireccion() {
@@ -79,20 +62,4 @@ public class Cliente {
         this.direccion = direccion;
     }
 
-    public String[] getNumeroTelefono() {
-        return numeroTelefono;
-    }
-
-    public void setNumeroTelefono(String[] numeroTelefono) {
-        this.numeroTelefono = numeroTelefono;
-    }
-
-    public String getCorreoElectronico() {
-        return correoElectronico;
-    }
-
-    public void setCorreoElectronico(String correoElectronico) {
-        this.correoElectronico = correoElectronico;
-    }
-    
 }//Fin de la clase
