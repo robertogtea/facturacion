@@ -5,6 +5,7 @@
  */
 package vista;
 
+import controlador.Controlador_FRM_Clientes;
 import modelo.Cliente;
 
 /**
@@ -49,6 +50,13 @@ public class JP_InformacionClientes extends javax.swing.JPanel {
         String arregloCliente[] = {jt_Cedula.getText(), jt_Nombre.getText(), jt_Apellidos.getText(), jta_Direccion.getText()};
         return arregloCliente;
     }//Fin del metodo
+    
+    public void agregarEventosClientes(Controlador_FRM_Clientes controlador){
+        btn_AñadirCorreo.addActionListener(controlador);
+        btn_AñadirTelefono.addActionListener(controlador);
+        btn_EliminarCorreo.addActionListener(controlador);
+        btn_EliminarTelefono.addActionListener(controlador);
+    }//Fin del metodo agregarEventosClientes
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -137,8 +145,10 @@ public class JP_InformacionClientes extends javax.swing.JPanel {
         });
 
         btn_AñadirTelefono.setText("Añadir");
+        btn_AñadirTelefono.setEnabled(false);
 
         btn_EliminarTelefono.setText("Eliminar");
+        btn_EliminarTelefono.setEnabled(false);
 
         jl_Correo.setText("Correo: ");
 
@@ -150,8 +160,10 @@ public class JP_InformacionClientes extends javax.swing.JPanel {
         });
 
         btn_AñadirCorreo.setText("Añadir");
+        btn_AñadirCorreo.setEnabled(false);
 
         btn_EliminarCorreo.setText("Eliminar");
+        btn_EliminarCorreo.setEnabled(false);
 
         jtb_Correos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

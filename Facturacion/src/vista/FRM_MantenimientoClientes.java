@@ -26,12 +26,12 @@ public class FRM_MantenimientoClientes extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         controlador = new Controlador_FRM_Clientes(conexion, this);
         jP_Botones1.agregarEventosClientes(controlador);
-        btn_Reporte.addActionListener(controlador);
+        jP_InformacionClientes1.agregarEventosClientes(controlador);
     }//Fin del constructor
     
     public void limpiarVentana(){
-        jP_InformacionClientes1.limpiarVentana();
-        jP_Botones1.estadoInicial();
+        //jP_InformacionClientes1.limpiarVentana();
+        //jP_Botones1.estadoInicial();
     }//Fin del metodo limpiarVentana
     
     public String obtenerCedula(){
@@ -52,7 +52,8 @@ public class FRM_MantenimientoClientes extends javax.swing.JFrame {
     }//Fin del metodo 
     
     public Cliente getCliente(){
-        return jP_InformacionClientes1.getCliente();
+        //return jP_InformacionClientes1.getCliente();
+        return new Cliente();
     }//Fin del metodo getCliente    
 
     /**
@@ -64,17 +65,31 @@ public class FRM_MantenimientoClientes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jP_InformacionClientes1 = new vista.JP_InformacionClientes();
+        jP_Botones1 = new vista.JP_Botones();
+
         setTitle("Registro Clientes");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jP_InformacionClientes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(jP_Botones1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 528, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jP_InformacionClientes1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jP_Botones1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -85,5 +100,7 @@ public class FRM_MantenimientoClientes extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private vista.JP_Botones jP_Botones1;
+    private vista.JP_InformacionClientes jP_InformacionClientes1;
     // End of variables declaration//GEN-END:variables
 }//Fin de la clase

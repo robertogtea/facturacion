@@ -236,11 +236,13 @@
     <Component class="javax.swing.JButton" name="btn_A&#xf1;adirTelefono">
       <Properties>
         <Property name="text" type="java.lang.String" value="A&#xf1;adir"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btn_EliminarTelefono">
       <Properties>
         <Property name="text" type="java.lang.String" value="Eliminar"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jl_Correo">
@@ -259,11 +261,13 @@
     <Component class="javax.swing.JButton" name="btn_A&#xf1;adirCorreo">
       <Properties>
         <Property name="text" type="java.lang.String" value="A&#xf1;adir"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btn_EliminarCorreo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Eliminar"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane4">
