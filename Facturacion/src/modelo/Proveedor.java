@@ -15,13 +15,11 @@ public class Proveedor {
     private String cedula;
     private String nombreEmpresa;
     private String direecion;
-    private String productos;
 
-    public Proveedor(String cedula, String nombreEmpresa, String direecion, String productos) {
+    public Proveedor(String cedula, String nombreEmpresa, String direecion) {
         this.cedula = cedula;
         this.nombreEmpresa = nombreEmpresa;
         this.direecion = direecion;
-        this.productos = productos;
     }
 
     public String getCedula() {
@@ -47,16 +45,14 @@ public class Proveedor {
     public void setDireecion(String direecion) {
         this.direecion = direecion;
     }
-
-    public String getProductos() {
-        return productos;
-    }
-
-    public void setProductos(String productos) {
-        this.productos = productos;
-    }
-
+   
     
+    
+    
+    
+
+   
+   
      
      
     
