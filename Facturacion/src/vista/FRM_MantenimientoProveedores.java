@@ -27,12 +27,12 @@ public class FRM_MantenimientoProveedores extends javax.swing.JFrame {
     } 
     
     public String obtenerCedula(){
-       return jP_InformacionProveedor2.obtenerCedula();
+       return jP_InformacionProveedor1.obtenerCedula();
     }
     
     public void mostrarInformacion(Proveedor proveedor)
     {
-        jP_InformacionProveedor2.mostrarInformacion(proveedor);
+        jP_InformacionProveedor1.mostrarInformacion(proveedor);
     }
     
     public void habilitarModificarEliminar()
@@ -41,19 +41,19 @@ public class FRM_MantenimientoProveedores extends javax.swing.JFrame {
     }
     
     public void habilitarAgregar(){
-        jP_InformacionProveedor2.habilitarAgregar();
+        jP_InformacionProveedor1.habilitarAgregar();
         jP_Botones1.habilitarAgregar();
     }
     
     public void limpiarVentana()
     {
-        jP_InformacionProveedor2.limpiarVentana();
+        jP_InformacionProveedor1.limpiarVentana();
         jP_Botones1.estadoInicial();
     }
     
     public Proveedor getProveedor()
     {
-        return jP_InformacionProveedor2.getProveedor();
+        return jP_InformacionProveedor1.getProveedor();
         
     }
 
@@ -67,7 +67,7 @@ public class FRM_MantenimientoProveedores extends javax.swing.JFrame {
     private void initComponents() {
 
         jP_Botones1 = new vista.JP_Botones();
-        jP_InformacionProveedor2 = new vista.JP_InformacionProveedor();
+        jP_InformacionProveedor1 = new vista.JP_InformacionProveedor();
 
         setTitle("Registro de Proveedores");
 
@@ -76,21 +76,23 @@ public class FRM_MantenimientoProveedores extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jP_InformacionProveedor2, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
+                        .addGap(19, 19, 19)
+                        .addComponent(jP_InformacionProveedor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(147, 147, 147)
                         .addComponent(jP_Botones1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jP_InformacionProveedor2, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jP_InformacionProveedor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jP_Botones1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -103,6 +105,6 @@ public class FRM_MantenimientoProveedores extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private vista.JP_Botones jP_Botones1;
-    private vista.JP_InformacionProveedor jP_InformacionProveedor2;
+    private vista.JP_InformacionProveedor jP_InformacionProveedor1;
     // End of variables declaration//GEN-END:variables
 }
